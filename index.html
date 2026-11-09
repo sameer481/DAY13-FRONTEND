@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 13 - Introduction to Bootstrap 5</title>
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <style>
+    .grid-demo-col {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .grid-demo-col:hover {
+      background: #e0f2fe;
+      border-color: #0284c7;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- 1. Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <span class="text-white">Boot</span>Camp 5
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#grid">Grid System</a></li>
+          <li class="nav-item"><a class="nav-link" href="#components">Components</a></li>
+          <li class="nav-item"><a class="nav-link" href="#forms">Forms</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Hero Section -->
+  <header class="py-5 bg-white border-bottom text-center">
+    <div class="container py-4">
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-3 fw-semibold">
+        Day 13: Introduction to Bootstrap 5
+      </span>
+      <h1 class="display-4 fw-bold text-dark mb-3">
+        Modern, Responsive Front-End Framework
+      </h1>
+      <p class="lead text-secondary mx-auto mb-4" style="max-width: 720px;">
+        Bootstrap 5 empowers you to build fluid layouts with an intuitive 12-column grid,
+        pre-styled components, and comprehensive utility classes—no jQuery needed.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#grid" class="btn btn-primary btn-lg px-4 fw-semibold shadow-sm">Explore Grid</a>
+        <a href="#forms" class="btn btn-outline-secondary btn-lg px-4 fw-semibold">Test Forms</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container my-5">
+
+    <!-- Dismissible Alert -->
+    <div class="alert alert-info alert-dismissible fade show d-flex align-items-center shadow-sm mb-5" role="alert">
+      <div class="me-auto">
+        <strong>💡 Bootstrap 5 Highlights:</strong> Native ES6+ JavaScript, CSS Custom Properties, and responsive gutters (<code>g-3</code>).
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- 3. The 12-Column Grid System -->
+    <section id="grid" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark">The 12-Column Grid System</h2>
+        <p class="text-muted">Columns divide the row into 12 parts and reflow responsively across viewports.</p>
+      </div>
+
+      <!-- Equal Thirds -->
+      <div class="row g-3 text-center mb-3">
+        <div class="col-12 col-md-4">
+          <div class="grid-demo-col">
+            .col-12 .col-md-4
+            <div class="text-muted small fw-normal">4 cols (33.3%) on MD+</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="grid-demo-col">
+            .col-12 .col-md-4
+            <div class="text-muted small fw-normal">4 cols (33.3%) on MD+</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="grid-demo-col">
+            .col-12 .col-md-4
+            <div class="text-muted small fw-normal">4 cols (33.3%) on MD+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 / 4 Split -->
+      <div class="row g-3 text-center">
+        <div class="col-12 col-md-8">
+          <div class="grid-demo-col">
+            .col-12 .col-md-8
+            <div class="text-muted small fw-normal">8 cols (66.6%) Main Content</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="grid-demo-col">
+            .col-12 .col-md-4
+            <div class="text-muted small fw-normal">4 cols (33.3%) Sidebar</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. UI Components (Cards & Badges) -->
+    <section id="components" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark">Essential UI Components</h2>
+        <p class="text-muted">Cards, pill badges, and contextual button states</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-primary-subtle text-primary align-self-start rounded-pill px-3 py-1 mb-2">Grid</span>
+              <h5 class="card-title fw-bold">Flexbox Grid</h5>
+              <p class="card-text text-secondary flex-grow-1">
+                Effortlessly control column widths and responsive wrapping with simple class names.
+              </p>
+              <button class="btn btn-outline-primary btn-sm rounded-pill mt-3">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-success-subtle text-success align-self-start rounded-pill px-3 py-1 mb-2">CSS Vars</span>
+              <h5 class="card-title fw-bold">Theme Tokens</h5>
+              <p class="card-text text-secondary flex-grow-1">
+                Customize colors, fonts, and dark mode states dynamically via CSS custom properties.
+              </p>
+              <button class="btn btn-outline-success btn-sm rounded-pill mt-3">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-warning-subtle text-warning-emphasis align-self-start rounded-pill px-3 py-1 mb-2">Forms</span>
+              <h5 class="card-title fw-bold">Form Controls</h5>
+              <p class="card-text text-secondary flex-grow-1">
+                Accessible, cross-browser input controls with built-in validation states.
+              </p>
+              <button class="btn btn-outline-warning btn-sm rounded-pill mt-3">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Forms Section -->
+    <section id="forms" class="p-4 p-md-5 bg-white border rounded-4 shadow-sm mb-5">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+          <h3 class="fw-bold text-dark">Bootstrap Form Controls</h3>
+          <p class="text-secondary">
+            Bootstrap transforms plain HTML forms into beautiful, mobile-friendly input controls with unified padding and focus rings.
+          </p>
+          <ul class="list-unstyled text-secondary small">
+            <li class="mb-2">✔ Unified look across iOS, Android, and Desktop</li>
+            <li class="mb-2">✔ Works smoothly with React state and forms</li>
+            <li>✔ Supports floating labels and validation states</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-7">
+          <form onsubmit="event.preventDefault(); alert('Form submitted successfully!');" class="p-3 bg-light rounded-3 border">
+            <div class="mb-3">
+              <label for="nameInput" class="form-label fw-semibold">Full Name</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="Sameer Mohammed" required />
+            </div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label fw-semibold">Email address</label>
+              <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="frameworkSelect" class="form-label fw-semibold">Preferred UI Framework</label>
+              <select class="form-select" id="frameworkSelect">
+                <option value="bootstrap5" selected>Bootstrap 5.3 (CSS + JS)</option>
+                <option value="reactbootstrap">React-Bootstrap</option>
+                <option value="tailwind">Tailwind CSS</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-white border-top text-center text-muted">
+    <div class="container">
+      <p class="mb-0">© 2026 Frontend Mastery — Day 13: Introduction to Bootstrap 5</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
